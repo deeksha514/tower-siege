@@ -64,3 +64,15 @@ function draw() {
   ground.display();
   drawSprites();
 }
+
+function mouseDragged(){
+  if (gameState!=="launched"){
+      Matter.Body.setPosition(hexagon.body, {x: mouseX , y: mouseY});
+  }
+}
+
+
+function mouseReleased(){
+  sling.fly();
+  gameState = "launched";
+}
