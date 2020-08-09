@@ -2,7 +2,9 @@ class Box {
     constructor(x,y,w,h){
 
         var options={
-            isStatic:true
+            'restitution':0.8,
+            'friction':0.5,
+            'density':0.001
         }
 
         this.w=w;
@@ -18,7 +20,7 @@ class Box {
         push();
         translate(BoxPos.x,BoxPos.y);
         rectMode(CENTER);
-        fill(255,255,0);
+        fill(255,182,193);
         strokeWeight(4);
         rect(0,0,this.w,this.h);
         pop();

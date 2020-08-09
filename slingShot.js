@@ -7,8 +7,10 @@ class SlingShot{
           length:10
 
       }
-       this.pointB=pointB;
+       
        this.sling=Constraint.create(options);
+       this.pointB=pointB;
+       
        World.add(world,this.sling);
 
     }
