@@ -6,9 +6,10 @@ const Constraint = Matter.Constraint;
 var engine,world;
 var box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,box13;
 var ground,sling;
-var hexagon;
+var hexagon,hexagonimage;
 
 function preload(){
+hexagonimage=loadImage("hexagon1.png");
 }
 
 function setup() {
@@ -35,7 +36,7 @@ function setup() {
   box15=new Box(580,305,40,40);
   
   hexagon=Bodies.rectangle(100,100,50,50);
-  this.hexagon=loadImage("hexagon1.jpg")
+  //hexagon.addImage(hexagonimage);
   World.add(world,hexagon);
 
   ground=new Ground(580,490,220,10);
@@ -70,7 +71,7 @@ function draw() {
 
   ground.display();
 
-  rect(hexagon.position.x,hexagon.position.y,50,50);
+  image(hexagonimage,hexagon.position.x,hexagon.position.y,50,50);
   //drawSprites();
 }
 
