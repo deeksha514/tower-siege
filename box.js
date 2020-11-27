@@ -11,6 +11,7 @@ class Box {
         this.h=h;
         this.x=x;
         this.y=y;
+        this.colour=color(random(125,255),random(125,255),random(125,255));
         this.body=Bodies.rectangle(x,y,w,h,options)
         World.add(world,this.body);
         this.Visibilty=255;
@@ -22,15 +23,24 @@ class Box {
         push();
         translate(BoxPos.x,BoxPos.y);
         rectMode(CENTER);
-        fill(255,182,193);
+        fill(this.colour);
         strokeWeight(4);
         rect(0,0,this.w,this.h);
         pop();
         }else{
          World.remove(world,this.body);
+         this.Visibilitty=this.Visibility-5
          tint (255,this.Visibilty);
          rect(0,0,this.w,this.h);
 
           }
+    }
+
+    score(){
+        if(this.Visibility<0 && this.Visibilty >-150){
+            score++
+        }
+
+
     }
 }

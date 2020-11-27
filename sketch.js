@@ -7,6 +7,7 @@ var engine,world;
 var box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,box13;
 var ground,sling;
 var hexagon,hexagonimage;
+var score=0;
 
 function preload(){
 hexagonimage=loadImage("hexagon1.png");
@@ -48,9 +49,11 @@ function setup() {
 }
 
 function draw() {
+  background(0,0,0);
 
   Engine.update(engine);
-  background(0,0,225);  
+  textSize(30);
+  text("Score:"+score,540,120);
   box1.display();
   box2.display();
   box3.display();
@@ -66,6 +69,22 @@ function draw() {
   box13.display();
   box14.display();
   box15.display();
+
+  box1.score();
+  box2.score();
+  box3.score();
+  box4.score();
+  box5.score();
+  box6.score();
+  box7.score();
+  box8.score();
+  box9.score();
+  box10.score();
+  box11.score();
+  box12.score();
+  box13.score();
+  box14.score();
+  box15.score();
 
   sling.display();
 
@@ -88,3 +107,4 @@ function keyPressed(){
     sling.attach(this.hexagon);
   }
 }
+
